@@ -24,7 +24,6 @@ const IndexPage = ({ data }) => (
         <div key={node.id}>
           <BlogLink to={node.fields.slug}>
             <BlogTitle>
-              {" "}
               {node.frontmatter.title} - {node.frontmatter.date}{" "}
             </BlogTitle>
           </BlogLink>
@@ -47,6 +46,9 @@ export const query = graphql`
             date
             description
             title
+          }
+          fields {
+            slug
           }
           excerpt
           id
